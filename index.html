@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+    @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap');
+    </style>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>A Hacker's Journey</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<!-- 
+
+Planning n layout... 
+
+color scheme: white bg with blue text. (ended up with dark grey bg with turquoise text)
+
+- hacker blog
+
+- needs to be easy to update
+
+- maybe do something like the H@<K webcomic website i have, where when u click on something a panel pops up for each of the different blog posts.. that way everything can be contained in one html document instead..
+
+- that would need javascript so that everytime i had to post something new i'd need to update html, css AND javascript
+
+- would be nice to add the ability to sort things based on tags. 
+
+- maybe write a script to update the html and jss pages in a specific way. say each panel = add a li (list) that acts as the div with the preview image; then add a li within it for the panel itself. then use the getelementbyclassname[1]; getelementbyclassname[2], etc to make the panels show when the initial li is clicked. ARRAYS!!! that's what its called!!
+
+- maybe even create the templates in html and js in anticipation for the new blog forms but just comment them out until ready to use... maybe make 100 of them? doubt i'd write 100 blog posts in a year so that should be enough to keep me goin' for a while. also make a commented out template so in case i use up all of em i can just copy the temlpate again without worrying about the format being messed up or forgetting to replace something
+
+like dis:
+
+- li - preview
+
+	- li (this li is for the panel itself. )
+	
+		- <h1> blogpage title </h1>
+		- <p> blogpage content goes here.. what about formatting and stuff </p>
+	
+	- /li
+- /li
+
+- dont forget to add a button to x out of it...
+
+- Have the website sorted by array reverse order so that it shows on the top 
+
+-USE FLEX right off the bat!!! otherwise its gonna b helluva pain to make things look nice n organized!
+
+- a blog post preview would be about this size:
+
+-------------------------------
+|                             |
+|                             |
+|                             |
+|                             |
+|   clickable preview here    |
+|                             |
+|                             |
+|                             |
+|                             |
+-------------------------------
+
+- use this to add buttons to sort posts by tags: 
+
+https://www.w3schools.com/howto/howto_js_filter_elements.asp
+
+- tags to use:
+
+	- starting_out
+	- tutorials
+	- overthewire
+	- hackthebox
+	- misc
+
+- good font: M PLUS Rounded 1c
+
+https://fonts.google.com/specimen/M+PLUS+Rounded+1c?sidebar.open=true&selection.family=M+PLUS+Rounded+1c:wght@100|Roboto&preview.text_type=custom#standard-styles
+
+- ^ extra bold seems like a good one to use for the title of the blog..
+
+- title of the blog: A Hacker's Journey
+
+Website Link: https://mitsukiyouko555.github.io/ahackersjourney/
+
+--------------------------------
+How to make a hacker blog:
+--------------------------------
+
+- disclaimer, i am a n00b too; this is my second website coded from scratch . 
+(made my first website Nov 2020 (https://mitsukiyouko555.github.io/hackwebcomic (my very first website that i made for my WIP comic - all art on that site belongs to me.) this is just a guide on how I make my websites and this tut kinda touches the basicas of html, css, and random parts of javascript because i only know/look up what i use.)
+
+- think about the topic and the color scheme
+
+Create a folder to store all of your website stuff. everything for your website must go in the same folder for this to work
+
+With sublime text or an editor of your choice, create a document called index.html (when you get to css you'd create at least one other document with a name similar to stylesheet.css. when you get to javascript you'd create a file with a similar name as javascript.js. all of these files have to be in the same folder to work. when you get to adding images you can add images within that folder OR make a folder within the folder and put the pics there but for referencing images you'd have to remember to do foldername/image.jpg if your image is within a folder in that folder.)
+
+- doctype statement
+<html>
+
+<head>
+<title> A Hacker's Journey </title>
+^ this title is basically the name that will show up in the tab when you open the site.
+</head>
+
+Wrote some notes here to figure out how i wanted the website to look.
+
+<footer>
+</footer>  
+
+</html>
+
+My fav html/css resources: 
+
+(NOTE with this one, don't do css until you watched the Flex)
+
+https://www.youtube.com/playlist?list=PL4cUxeGkcC9ivBf_eKCPIAYXWzLlPAm6G
+
+Flexbox: https://www.youtube.com/playlist?list=PL4cUxeGkcC9i3FXJSUfmsNOx8E7u6UuhG
+
+
+NOTE When adding images, add a loading="lazy" in front of src for every image after the first few/first row.. that will make things load faster!
+
+----------------------------------------
+PUT THIS BETWEEN THE HEAD:
+----------------------------------------
+For font use import (i get my fonts from google fonts):
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap');
+</style>
+
+viewport forgot why this is important but it is. something about your display not going off the screen:
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+ To link CSS to html put this at the top if you have more than one stylesheet:
+
+ one reason you may have more than one sheet is if you have multiple pages in your website. one can be a general one that goes on every page and each page can have, additionally, its own if there are some formatting that differs from the main page.
+
+ <link rel="stylesheet" href="styles.css">
+ <link rel="stylesheet" href="homepage_new.css">
+
+----------------------------------------
+BODY - Start of the body that goes between head and footer
+----------------------------------------
+
+I belive this makes sure that anything that goes off the page is hidden:
+
+<body style="overflow-x: hidden;">
+
+Using Class for easy styling you can stype by group so that for example everything that has the class of blue shows up as blue once you put it in CSS.
+
+create a wrapper and flex container div for easy stying as well
+
+<div="wrapper">
+	<div class="flex-container">
+		
+		put more divs in here. this would be the meat of your website.
+
+		<div>
+			a div is like a section 
+		</div>
+
+	</div
+</div>
+
+If you want to do anything not noted in either of those playlists literally just google what you want to do and you will find good results especially from w3school.
+
+<h1></h1>
+<h2></h2>
+<h3></h3>
+<h4></h4>
+<h5></h5>
+
+<p>this makes a paragraph</p>
+
+<small><p> this makes the paragraph text small without css</p></small>
+
+<span> this is for easy styling for if you want to have everything with the tag of span show as red for example. </span>
+
+<center> this centers the text without css </center>
+
+<br> makes a new line
+
+At the very very BOTTOM of the body BUT STILL WITHIN the body add your javascript file. this is cuz html loads from the top to the bottom and if you put javascript at the top it will load before any of your other visual loads which is weird.
+
+<script src="javascript.js"></script>
+
+make lists with <li></li>. those usually are easier to put in order
+
+
+
+Well.. i guess there is also an easier way to do this instead of having each blogpost open as a panel within the thing, it could just open as another page instead.......... that'd probs be easier...
+
+
+---------------------------------------------
+
+----------
+CSS
+----------
+
+
+----------
+Javascript
+----------
+
+
+----------
+Responsive Web Media
+----------
+
+
+Well if i do it the easy way i dont even need to bother with this too much - i hope lol
+
+----------------------------
+Hosting the site on github
+----------------------------
+
+A Little how to in case i forget..
+
+How to publish your own website on github.
+
+- actually it looks like you no longer need to have a username/username repository to use github pages!!! so u can name it anything and go into the settings and still be able to activate github pages wow!!!
+
+- add a bit on how to publish a SECOND website!
+
+-once you have your first website up, make a second repository
+- make sure to add a readme!
+- go to settings > under general if you scroll down it doesnt have the github pages button
+- you want to go to pages under settings NOT General! then you will have the option to enable github pages.
+- click enable; branch -> main folder -> root -> save
+- a link will show up, wait a few mins and click it and it should work
+
+
+
+---------------------------------------------
+-->
+
+	<body style="overflow-x: hidden;">
+
+			<div class="wrapper">
+					<div class="container">
+
+						<!--putting a banner here...-->
+						<div class="banner" id="banner">
+							<img src="img/placeholder_banner.png" width="1400px">
+						</div>
+
+						<h1 class="title"> <!--first we need a title thingy.-->
+						A Hacker's Journey
+						</h1>
+
+						<div class="menu-div">
+							<!--we should probs put a little menu thing here..... with a nav... maybe-->
+							<nav class="flex-gap">
+								<li><a href="index.html"><h2 class="menu">Home</h2></a></li> <!--leads to this main page-->
+								<li><a href="About.html"><h2 class="menu">About</h2></a></li>
+							</nav>
+
+						</div>
+
+
+						<!--OR easier way is just to make a new html page per post and link to it... duh............. and have a nav page but we can get to that later.. just try it out.
+
+						-->
+
+						<!--Make a thing right here to sort by Tags-->
+
+
+						<div class="blogpost-div">
+						<h2 class="blogpost-h2">
+
+
+
+							 <!--Blogposts go in here. NOTE: ADD NEW ONES TO THE TOP HERE NOT THE BOTTOM!
+
+							 Use Template and Replace these:
+
+							 - img/placeholder.png with img name/path
+							 - <a href="blogposts/blogpost#.html"> < replace # with the number of the post
+							 - <span>Insert Title of Blog Post</span> Replace that with the title of the post
+
+
+						------------------------------------------------------------------------------
+															TEMPLATE					
+						------------------------------------------------------------------------------
+						<div class="blogpost">
+							<img class="blogpost-img" src="img/placeholder.png">
+								<br>
+									<a href="blogposts/blogpost#.html">
+										<span>Insert Title of Blog Post</span>
+									</a>					
+						</div>
+
+						<br>
+						<br>
+						<br>
+						------------------------------------------------------------------------------
+							 -->
+
+
+
+						<div class="blogpost">
+						<img class="blogpost-img" src="img/placeholder.png">
+						<br>
+							<a href="blogposts/blogpost4.html">
+								<span>PLACEHOLDER 4</span>
+							</a>					
+						</div>
+
+						<br>
+						<br>
+						<br>
+
+						<div class="blogpost">
+						<img src="img/placeholder.png">
+						<br>
+						<a href="blogposts/blogpost3.html"><span>PLACEHOLDER 3</span></a>
+						</div>
+
+						<br>
+						<br>
+						<br>
+
+
+						<div class="blogpost">
+						<img src="img/placeholder.png">
+						<br>
+						<a href="blogposts/blogpost2.html"><span>PLACEHOLDER 2</span></a></div>
+
+						<br>
+						<br>
+						<br>
+
+						<div class="blogpost">
+						<img src="img/placeholder.png">
+						<br>
+						<a href="blogposts/blogpost1.html"><span>PLACEHOLDER 1</span></a>
+						</div>
+
+						</h2>
+						</div>
+						<!--for onhover: load preview-->
+					</div>
+
+
+
+						<footer>
+
+							© Copyright Mitsuki Youko ©
+
+						</footer>
+
+
+
+					</div> <!--container div-->
+			</div> <!--wrapper div-->
+
+		   <script src="javascript.js"></script>
+
+	</body> <!--end of body-->
+
+</html>
