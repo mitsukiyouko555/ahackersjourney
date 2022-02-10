@@ -1,0 +1,150 @@
+/*
+
+Font color: #41adac or #52c6bc
+Background color: #131313
+
+For Font, just use Rounded Mplus 1c. its easier to manage.
+
+
+In HTML put dis: 
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap');
+</style>
+
+----------
+
+IN CSS (Here) put dis: 
+
+font-family: 'M PLUS Rounded 1c', sans-serif;
+
+
+Use this to get rid of link underline and change link color:  https://tutorial.eyehunts.com/html/html-link-without-underline-and-color-css-example-code/
+
+WATCH THESE FOR FLEX!!!!
+
+https://www.youtube.com/watch?v=u044iM9xsWU
+https://www.youtube.com/watch?v=s3wHkfMz8oE
+
+*/
+div li{
+	list-style-type: none;
+}
+
+.wrapper{
+	width: 100% absolute;
+}
+.container{
+	display: flex;
+    flex-flow: row;
+	flex-wrap: wrap;
+    max-width: 100%;
+}
+
+body{
+	background-color: #131313;
+	width: auto;
+}
+
+body, h1, h2, h3, h4, h5, h6, p{
+	font-family: 'M PLUS Rounded 1c', sans-serif;
+	color: #45CBB6;
+}
+
+.title{
+	position: relative;
+	left: 1em;
+	padding: 0 0 0 0;
+}
+
+a {
+	text-decoration: none;
+	color: #45CBB6;
+}
+
+a:hover{
+	color: #78FFED;
+}
+
+.menu-div{
+	position: relative;
+	display: inline-flex;
+	margin-left: auto;
+	padding-right: 2em;
+	top: 0em;
+}
+
+.banner img{
+	position: relative;
+	width: 100%;
+	padding-right: 0px;
+	padding-left: 0px;
+	height: auto;
+}
+
+nav{
+	display: inline-flex;
+	flex-wrap: wrap;
+}
+
+.menu{
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+/*.blogpost{
+	display: inline-flex;
+	flex-wrap: wrap;
+}*/
+.blogpost-div{
+	position: relative;
+	top: 2em;
+	width: 100%;
+	left: 4.5em;
+}
+
+
+.blogpost{
+	display: inline-flex;
+	width: 90%;
+	height: auto;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	border: 1px solid;
+	border-color: #45CBB6;
+
+}
+
+.blogpost img{
+	margin-right: 3em;
+	margin-left: 1em;
+	border: 2px solid #CDDCEA;
+}
+
+.blogpost span{
+	align-content: center;
+	word-wrap: break-word;
+	position:relative;
+	top: 2.5em;
+}
+
+.paragraph{
+	display: inline-flex;
+	width: auto;
+	padding-right: 5em;
+	padding-left: 5em;
+}
+
+footer{
+	position: relative;
+	width: 100%;
+	bottom: 0px;
+	left: 42.5%;
+	padding-top: 4em;
+	padding-bottom: 1em;
+}
+
+
+
+
+
